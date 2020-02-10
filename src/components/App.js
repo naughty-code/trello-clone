@@ -48,7 +48,6 @@ class App extends React.Component{
                 <CardCollection list={lists.find(l => l.fixed)} />
               </Col>
               <Col>
-                <h2> Hello Youtube </h2>
                 <Droppable droppableId="all-lists" direction="horizontal" type="list">
                   {(provided)=>(
                     <ListsContainer 
