@@ -97,7 +97,7 @@ const listsReducer = (state = initialState, action) => {
                     droppableIdEnd,
                     droppableIndexStart,
                     droppableIndexEnd,
-                    draggableId,
+                    // draggableId,
                     type
             } = action.payload;
             //dragging list around

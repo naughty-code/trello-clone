@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import listsReducer from "./ListsReducer";
-import fixedListReducer from "./FixedListReducer";
+//import fixedListReducer from "./FixedListReducer";
 //import { CONSTANTS } from "../actions";
 
 //const mainReducer = (state, action) => {

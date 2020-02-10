@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
-import TrelloList from "./TrelloList";
-import CardCollection from "./CardCollection";
+import React from 'react';
 import { connect } from "react-redux";
-import TrelloActionButton from './TrelloActionButton';
+
 import { DragDropContext,  Droppable } from 'react-beautiful-dnd';
-import { sort } from '../actions';
 import styled from "styled-components";
+
+import TrelloList from "./TrelloList";
+import TrelloActionButton from './TrelloActionButton';
+
+import SideMenu from './SideMenu.js';
+
+import { sort } from '../actions';
+
+import './App.css';
 
 const ListsContainer = styled.div`
   display: flex;
@@ -45,7 +51,7 @@ class App extends React.Component{
       <DragDropContext onDragEnd={this.onDragEnd}>
         <ColContainer>
               <Col>
-                <CardCollection list={lists.find(l => l.fixed)} />
+                <SideMenu records={ lists.find(l => l.fixed) }/>
               </Col>
               <Col>
                 <Droppable droppableId="all-lists" direction="horizontal" type="list">
