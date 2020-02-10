@@ -9,30 +9,31 @@ const CardContainer = styled.div`
     margin-bottom: 8px;
 `;
 
-const TrelloCard = ({ text,  id, index }) => {
-    return (
-        <Draggable draggableId={String(id)} index={index}>
-            {
-                provided => (
-                    <CardContainer 
-                        ref={provided.innerRef} 
-                        {...provided.draggableProps} 
-                        {...provided.dragHandleProps}
-                    >
-                        <Card>
-                            <CardContent>
-                                <Typography  
-                                    gutterBottom
-                                >
-                                {text}
-                                </Typography>
-                            </CardContent>
-                        </Card>
-                    </CardContainer>
-                )
-            }
-        </Draggable>
-    )
+const TrelloCard = ({ text, id, index, cardStyle }) => {
+  console.log(cardStyle)
+  return (
+    <Draggable draggableId={id} index={index}>
+      {
+        provided => (
+          <CardContainer 
+            ref={provided.innerRef} 
+            {...provided.draggableProps} 
+            {...provided.dragHandleProps}
+          >
+            <Card style={ cardStyle }>
+              <CardContent>
+                <Typography  
+                  gutterBottom
+                >
+                  {text}
+                </Typography>
+              </CardContent>
+            </Card>
+          </CardContainer>
+        )
+      }
+    </Draggable>
+  )
 };
 
 export default TrelloCard;

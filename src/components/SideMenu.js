@@ -2,6 +2,7 @@ import React from 'react';
 import { Droppable } from "react-beautiful-dnd";
 import useAutocomplete from '@material-ui/lab/useAutocomplete';
 import { makeStyles } from '@material-ui/core/styles';
+import { FixedSizeList as List } from 'react-window';
 
 import InputBase from '@material-ui/core/InputBase';
 
@@ -46,7 +47,7 @@ export default function({ list, ...other }) {
     getRootProps,
     // getInputLabelProps,
     getInputProps,
-    getListboxProps,
+    // getListboxProps,
     getOptionProps,
     groupedOptions,
 
@@ -60,17 +61,55 @@ export default function({ list, ...other }) {
     ...other
   });
 
-  const renderOptions = (groupedOptions) => {
+  const Row = ({ data, index, style }) => {
+
+    const item = data[index];
+
+    return (
+      <TrelloCard 
+        { ...getOptionProps({ item, index }) } 
+        key={ item.id } 
+        { ...item } 
+        index={ index } 
+        cardStyle={ style }
+      />
+    )
+  };
+
+  const renderOptions = (provided, snapshot, groupedOptions) => {
+
+    //{ ...provided.droppableProps }
+
+    const itemCount = snapshot.isUsingPlaceholder 
+      ? groupedOptions.length + 1 
+      : groupedOptions.length;
 
     if ( !groupedOptions || groupedOptions.length <= 0 )
       return null;
 
     return (
-      <>
-        { groupedOptions.map((card, index) => (
-          <TrelloCard { ...getOptionProps({ card, index }) } key={ card.id } { ...card } index={ index } />
-        )) }
-      </>
+      <List
+        height={800}
+        itemCount={ itemCount }
+        itemSize={70}
+        width={300}
+        outerRef={ provided.innerRef }
+        itemData={ groupedOptions }
+      >
+        { Row }
+      </List>
+    );
+  }
+
+  const renderClone = (provided, snapshot, rubric) => {
+    return (
+      <div
+        {...provided.draggableProps}
+        {...provided.dragHandleProps}
+        ref={provided.innerRef}
+      >
+        Item id: {rubric.draggableId}
+      </div>
     );
   }
 
@@ -81,15 +120,13 @@ export default function({ list, ...other }) {
         <InputBase { ...getInputProps() } className={ classes.input } fullWidth />
       </div>
 
-      <Droppable droppableId={ list.id }>
+      <Droppable 
+        droppableId={ list.id } 
+        mode="virtual"
+        renderClone={ renderClone }
+      >
 
-        { (provided) => (
-            <div { ...provided.droppableProps } ref={ provided.innerRef }>
-              { renderOptions(groupedOptions) }
-              { provided.placeholder }
-            </div>
-          )
-        }
+        { (provided, snapshot) => renderOptions(provided, snapshot, groupedOptions) }
 
       </Droppable>
 
