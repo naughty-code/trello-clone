@@ -42,6 +42,398 @@ const initialState  = [
       {'id': 'card-30', 'text': 'ALIVE'},
       {'id': 'card-31', 'text': 'ABLE'},
       {'id': 'card-32', 'text': 'ALOOF'},
+      {'id': 'card-33', 'text': 'AMBIGUOUS'},
+      {'id': 'card-34', 'text': 'AMBITIOUS'},
+      {'id': 'card-35', 'text': 'AMUSING'},
+      {'id': 'card-36', 'text': 'ANALYTICAL'},
+      {'id': 'card-37', 'text': 'ANTICIPATING'},
+      {'id': 'card-38', 'text': 'ANXIOUS'},
+      {'id': 'card-39', 'text': 'APPEARANCE'},
+      {'id': 'card-40', 'text': 'APPRECIATION'},
+      {'id': 'card-41', 'text': 'ARTFULNESS'},
+      {'id': 'card-42', 'text': 'ARTICULATE'},
+      {'id': 'card-43', 'text': 'ARTISTIC'},
+      {'id': 'card-44', 'text': 'ASSERTIVE'},
+      {'id': 'card-45', 'text': 'ASSURING'},
+      {'id': 'card-46', 'text': 'ATTENTIVE'},
+      {'id': 'card-47', 'text': 'ABUNDANCE'},
+      {'id': 'card-48', 'text': 'AUDACIOUS'},
+      {'id': 'card-49', 'text': 'AWFUL'},
+      {'id': 'card-50', 'text': 'BALANCE'},
+      {'id': 'card-51', 'text': 'BELONGING'},
+      {'id': 'card-52', 'text': 'BENEVOLENCE'},
+      {'id': 'card-53', 'text': 'BLISS'},
+      {'id': 'card-54', 'text': 'PROFESSIONAL'},
+      {'id': 'card-55', 'text': 'EASY'},
+      {'id': 'card-56', 'text': 'BORING'},
+      {'id': 'card-57', 'text': 'ATTRACTIVE'},
+      {'id': 'card-58', 'text': 'APPROACHABLE'},
+      {'id': 'card-59', 'text': 'PASSIONATE'},
+      {'id': 'card-60', 'text': 'ACCESSIBLE'},
+      {'id': 'card-61', 'text': 'BOUNDLESS'},
+      {'id': 'card-62', 'text': 'BRAVE'},
+      {'id': 'card-63', 'text': 'BRIGHT'},
+      {'id': 'card-64', 'text': 'BRILLIANCE'},
+      {'id': 'card-65', 'text': 'BRISKNESS'},
+      {'id': 'card-66', 'text': 'BOLD'},
+      {'id': 'card-67', 'text': 'COLLABORATIVE'},
+      {'id': 'card-68', 'text': 'AWARE'},
+      {'id': 'card-69', 'text': 'BUOYANCY'},
+      {'id': 'card-70', 'text': 'BUTTONED-DOWN'},
+      {'id': 'card-71', 'text': 'CALLOUS'},
+      {'id': 'card-72', 'text': 'CALM'},
+      {'id': 'card-73', 'text': 'INNOVATIVE'},
+      {'id': 'card-74', 'text': 'CAMARADERIE'},
+      {'id': 'card-75', 'text': 'CANDID'},
+      {'id': 'card-76', 'text': 'CAPABLE'},
+      {'id': 'card-77', 'text': 'ACTION-ORIENTED'},
+      {'id': 'card-78', 'text': 'CARE'},
+      {'id': 'card-79', 'text': 'CAREFUL'},
+      {'id': 'card-80', 'text': 'CARELESS'},
+      {'id': 'card-81', 'text': 'AVAILABILE'},
+      {'id': 'card-82', 'text': 'CERTAIN'},
+      {'id': 'card-83', 'text': 'CHALLENGING'},
+      {'id': 'card-84', 'text': 'ACCOUNTABLE'},
+      {'id': 'card-85', 'text': 'CHARITY'},
+      {'id': 'card-86', 'text': 'CHARMING'},
+      {'id': 'card-87', 'text': 'CHASTITY'},
+      {'id': 'card-88', 'text': 'CHEERFUL'},
+      {'id': 'card-89', 'text': 'CLARITY'},
+      {'id': 'card-90', 'text': 'COHERENT'},
+      {'id': 'card-91', 'text': 'CLASSIC'},
+      {'id': 'card-92', 'text': 'CLASSY'},
+      {'id': 'card-93', 'text': 'CLEVERNESS'},
+      {'id': 'card-94', 'text': 'COLORFUL'},
+      {'id': 'card-95', 'text': 'COMFORT'},
+      {'id': 'card-96', 'text': 'COMPASSION'},
+      {'id': 'card-97', 'text': 'COMPETENCE'},
+      {'id': 'card-98', 'text': 'COMPLACENCY'},
+      {'id': 'card-99', 'text': 'COMPLETION'},
+      {'id': 'card-100', 'text': 'COMPOSURE'},
+      {'id': 'card-101', 'text': 'CONCENTRATION'},
+      {'id': 'card-102', 'text': 'CONFORMITY'},
+      {'id': 'card-103', 'text': 'DARING'},
+      {'id': 'card-104', 'text': 'DECENCY'},
+      {'id': 'card-105', 'text': 'DECISIVE'},
+      {'id': 'card-106', 'text': 'DEDICATION'},
+      {'id': 'card-107', 'text': 'DEEP'},
+      {'id': 'card-108', 'text': 'DEFERENCE'},
+      {'id': 'card-109', 'text': 'DELICATE'},
+      {'id': 'card-110', 'text': 'DEMOCRATIC'},
+      {'id': 'card-111', 'text': 'DEPENDABLE'},
+      {'id': 'card-112', 'text': 'DETAILED'},
+      {'id': 'card-113', 'text': 'DETERMINED'},
+      {'id': 'card-114', 'text': 'DEVOUT'},
+      {'id': 'card-115', 'text': 'DEXTERITY'},
+      {'id': 'card-116', 'text': 'DIFFERENT'},
+      {'id': 'card-117', 'text': 'DIGNITY'},
+      {'id': 'card-118', 'text': 'DILIGENCE'},
+      {'id': 'card-119', 'text': 'DIPLOMATIC'},
+      {'id': 'card-120', 'text': 'DIRECT'},
+      {'id': 'card-121', 'text': 'DISCIPLINED'},
+      {'id': 'card-122', 'text': 'DISCRETE'},
+      {'id': 'card-123', 'text': 'DIVERSE'},
+      {'id': 'card-124', 'text': 'DOMINANT'},
+      {'id': 'card-125', 'text': 'DOWN-TO-EARTH'},
+      {'id': 'card-126', 'text': 'DREAMING'},
+      {'id': 'card-127', 'text': 'DRIVE'},
+      {'id': 'card-128', 'text': 'DUTY'},
+      {'id': 'card-129', 'text': 'DYNAMIC'},
+      {'id': 'card-130', 'text': 'EAGER'},
+      {'id': 'card-131', 'text': 'EASY'},
+      {'id': 'card-132', 'text': 'ECONOMIC'},
+      {'id': 'card-133', 'text': 'ECSTATIC'},
+      {'id': 'card-134', 'text': 'EDUCATED'},
+      {'id': 'card-135', 'text': 'EFFECTIVE'},
+      {'id': 'card-136', 'text': 'EFFICIENT'},
+      {'id': 'card-137', 'text': 'EGALITARIAN'},
+      {'id': 'card-138', 'text': 'ELATION'},
+      {'id': 'card-139', 'text': 'ELEGANT'},
+      {'id': 'card-140', 'text': 'EMPATHIC'},
+      {'id': 'card-141', 'text': 'EMPOWERING'},
+      {'id': 'card-142', 'text': 'ENCOURAGEMENT'},
+      {'id': 'card-143', 'text': 'ENDURANCE'},
+      {'id': 'card-144', 'text': 'ENERGY'},
+      {'id': 'card-145', 'text': 'ENGAGEMENT'},
+      {'id': 'card-146', 'text': 'ENJOYMENT'},
+      {'id': 'card-147', 'text': 'ENLIGHTENMENT'},
+      {'id': 'card-148', 'text': 'ENTERTAINING'},
+      {'id': 'card-149', 'text': 'ENTHUSIASM'},
+      {'id': 'card-150', 'text': 'ENTREPRENEURSHIP'},
+      {'id': 'card-151', 'text': 'ENVIRONMENT'},
+      {'id': 'card-152', 'text': 'EQUALITY'},
+      {'id': 'card-153', 'text': 'ETHICAL'},
+      {'id': 'card-154', 'text': 'EXACT'},
+      {'id': 'card-155', 'text': 'EXCELLENCE'},
+      {'id': 'card-156', 'text': 'EXCEPTIONAL'},
+      {'id': 'card-157', 'text': 'EXCITING'},
+      {'id': 'card-158', 'text': 'EXHILARATING'},
+      {'id': 'card-159', 'text': 'EXPEDIENCY'},
+      {'id': 'card-160', 'text': 'EXPERIENCED'},
+      {'id': 'card-161', 'text': 'EXPERTISE'},
+      {'id': 'card-162', 'text': 'EXPLORE'},
+      {'id': 'card-163', 'text': 'EXPRESSIVE'},
+      {'id': 'card-164', 'text': 'EXTRAVAGANCE'},
+      {'id': 'card-165', 'text': 'EXTROVERT'},
+      {'id': 'card-166', 'text': 'EXUBERANCE'},
+      {'id': 'card-167', 'text': 'FACILITATING'},
+      {'id': 'card-168', 'text': 'FAIRNESS'},
+      {'id': 'card-169', 'text': 'FAITH'},
+      {'id': 'card-170', 'text': 'FAITHFULNESS'},
+      {'id': 'card-171', 'text': 'FAME'},
+      {'id': 'card-172', 'text': 'FAMILY'},
+      {'id': 'card-173', 'text': 'FAMOUS'},
+      {'id': 'card-174', 'text': 'FANATICAL'},
+      {'id': 'card-175', 'text': 'FASHIONABLE'},
+      {'id': 'card-176', 'text': 'FAST'},
+      {'id': 'card-177', 'text': 'FEARLESS'},
+      {'id': 'card-178', 'text': 'FEROCIOUS'},
+      {'id': 'card-179', 'text': 'FIDELITY'},
+      {'id': 'card-180', 'text': 'FIERCE'},
+      {'id': 'card-181', 'text': 'FINE'},
+      {'id': 'card-182', 'text': 'FIRM'},
+      {'id': 'card-183', 'text': 'FIT'},
+      {'id': 'card-184', 'text': 'FLAIR'},
+      {'id': 'card-185', 'text': 'FLEXIBLE'},
+      {'id': 'card-186', 'text': 'FLOW'},
+      {'id': 'card-187', 'text': 'FLUENT'},
+      {'id': 'card-188', 'text': 'FLUID'},
+      {'id': 'card-189', 'text': 'FOCUSED'},
+      {'id': 'card-190', 'text': 'FORMAL'},
+      {'id': 'card-191', 'text': 'FRANK'},
+      {'id': 'card-192', 'text': 'FREE'},
+      {'id': 'card-193', 'text': 'FRESH'},
+      {'id': 'card-194', 'text': 'FRIENDLY'},
+      {'id': 'card-195', 'text': 'FRUGAL'},
+      {'id': 'card-196', 'text': 'FUN'},
+      {'id': 'card-197', 'text': 'FUTURE'},
+      {'id': 'card-198', 'text': 'GALLANTRY'},
+      {'id': 'card-199', 'text': 'GENEROSITY'},
+      {'id': 'card-200', 'text': 'GENIUS'},
+      {'id': 'card-201', 'text': 'GENTILITY'},
+      {'id': 'card-202', 'text': 'GENUINE'},
+      {'id': 'card-203', 'text': 'GIVING'},
+      {'id': 'card-204', 'text': 'GLOBAL'},
+      {'id': 'card-205', 'text': 'GOODNESS'},
+      {'id': 'card-206', 'text': 'GRACE'},
+      {'id': 'card-207', 'text': 'GRATEFULNESS'},
+      {'id': 'card-208', 'text': 'GRATITUDE'},
+      {'id': 'card-209', 'text': 'GREAT'},
+      {'id': 'card-210', 'text': 'GREGARIOUSNESS'},
+      {'id': 'card-211', 'text': 'GROWTH'},
+      {'id': 'card-212', 'text': 'GUIDANCE'},
+      {'id': 'card-213', 'text': 'HAPPINESS'},
+      {'id': 'card-214', 'text': 'HARMONY'},
+      {'id': 'card-215', 'text': 'HEALTHY'},
+      {'id': 'card-216', 'text': 'HELPFUL'},
+      {'id': 'card-217', 'text': 'HEROISM'},
+      {'id': 'card-218', 'text': 'HISTORIC'},
+      {'id': 'card-219', 'text': 'HOLY'},
+      {'id': 'card-220', 'text': 'HONEST'},
+      {'id': 'card-221', 'text': 'HOPE'},
+      {'id': 'card-222', 'text': 'HOPEFUL'},
+      {'id': 'card-223', 'text': 'HOSPITALITY'},
+      {'id': 'card-224', 'text': 'HUMBLE'},
+      {'id': 'card-225', 'text': 'HUMILITY'},
+      {'id': 'card-226', 'text': 'HUMOR'},
+      {'id': 'card-227', 'text': 'HYGIENE'},
+      {'id': 'card-228', 'text': 'INDEPENDENT'},
+      {'id': 'card-229', 'text': 'INDUSTRIOUS'},
+      {'id': 'card-230', 'text': 'INGENUITY'},
+      {'id': 'card-231', 'text': 'INQUISITIVENESS'},
+      {'id': 'card-232', 'text': 'INSIGHTFULNESS'},
+      {'id': 'card-233', 'text': 'INSPIRING'},
+      {'id': 'card-234', 'text': 'INSTINCTIVE'},
+      {'id': 'card-235', 'text': 'INTEGRITY'},
+      {'id': 'card-236', 'text': 'INTELLIGENCE'},
+      {'id': 'card-237', 'text': 'INTENSITY'},
+      {'id': 'card-238', 'text': 'INTIMACY'},
+      {'id': 'card-239', 'text': 'INTROVERSION'},
+      {'id': 'card-240', 'text': 'INTUITION'},
+      {'id': 'card-241', 'text': 'INVENTIVENESS'},
+      {'id': 'card-242', 'text': 'JITTERY'},
+      {'id': 'card-243', 'text': 'JOLLY'},
+      {'id': 'card-244', 'text': 'JOYFUL'},
+      {'id': 'card-245', 'text': 'JUDICIOUSNESS'},
+      {'id': 'card-246', 'text': 'JUST'},
+      {'id': 'card-247', 'text': 'KIND'},
+      {'id': 'card-248', 'text': 'KNOWLEDGE'},
+      {'id': 'card-249', 'text': 'LACKING'},
+      {'id': 'card-250', 'text': 'LASTING'},
+      {'id': 'card-251', 'text': 'LAVISHNESS'},
+      {'id': 'card-252', 'text': 'LEARNING'},
+      {'id': 'card-253', 'text': 'LEGACY'},
+      {'id': 'card-254', 'text': 'LIBERTY'},
+      {'id': 'card-255', 'text': 'LIKABLE'},
+      {'id': 'card-256', 'text': 'LIMITLESS'},
+      {'id': 'card-257', 'text': 'LIVELY'},
+      {'id': 'card-258', 'text': 'LOGIC'},
+      {'id': 'card-259', 'text': 'LONELY'},
+      {'id': 'card-260', 'text': 'LONGEVITY'},
+      {'id': 'card-261', 'text': 'LOYAL'},
+      {'id': 'card-262', 'text': 'LUCKY'},
+      {'id': 'card-263', 'text': 'MALICIOUS'},
+      {'id': 'card-264', 'text': 'MALLEABLE'},
+      {'id': 'card-265', 'text': 'MASTERY'},
+      {'id': 'card-266', 'text': 'MATERIALISTIC'},
+      {'id': 'card-267', 'text': 'MATURE'},
+      {'id': 'card-268', 'text': 'MATURITY'},
+      {'id': 'card-269', 'text': 'MEAN'},
+      {'id': 'card-270', 'text': 'MEANINGFUL'},
+      {'id': 'card-271', 'text': 'MELLOWNESS'},
+      {'id': 'card-272', 'text': 'MERCIFUL'},
+      {'id': 'card-273', 'text': 'METICULOUSNESS'},
+      {'id': 'card-274', 'text': 'MINDFULNESS'},
+      {'id': 'card-275', 'text': 'MODERATION'},
+      {'id': 'card-276', 'text': 'MODEST'},
+      {'id': 'card-277', 'text': 'MOTIVATED'},
+      {'id': 'card-278', 'text': 'MYSTERIOUS'},
+      {'id': 'card-279', 'text': 'NAIVE'},
+      {'id': 'card-280', 'text': 'NASTY'},
+      {'id': 'card-281', 'text': 'NAUGHTY'},
+      {'id': 'card-282', 'text': 'NEAT'},
+      {'id': 'card-283', 'text': 'NEIGHBORLY'},
+      {'id': 'card-284', 'text': 'NERVOUS'},
+      {'id': 'card-285', 'text': 'NICE'},
+      {'id': 'card-286', 'text': 'NOBLE'},
+      {'id': 'card-287', 'text': 'NOISY'},
+      {'id': 'card-288', 'text': 'NON-CONFORMING'},
+      {'id': 'card-289', 'text': 'NURTURING'},
+      {'id': 'card-290', 'text': 'OBEDIENT'},
+      {'id': 'card-291', 'text': 'OBJECTIVE'},
+      {'id': 'card-292', 'text': 'OBNOXIOUS'},
+      {'id': 'card-293', 'text': 'OPEN-MINDED'},
+      {'id': 'card-294', 'text': 'OPEN'},
+      {'id': 'card-295', 'text': 'OPPORTUNITY'},
+      {'id': 'card-296', 'text': 'OPTIMISM'},
+      {'id': 'card-297', 'text': 'OPULENCE'},
+      {'id': 'card-298', 'text': 'SMART'},
+      {'id': 'card-299', 'text': 'ORDER'},
+      {'id': 'card-300', 'text': 'ORIGINAL'},
+      {'id': 'card-301', 'text': 'OUTLANDISH'},
+      {'id': 'card-302', 'text': 'OUTRAGEOUS'},
+      {'id': 'card-303', 'text': 'OUTSTANDING'},
+      {'id': 'card-304', 'text': 'PANICKY'},
+      {'id': 'card-305', 'text': 'PATIENCE'},
+      {'id': 'card-306', 'text': 'PEACEFUL'},
+      {'id': 'card-307', 'text': 'PERCEPTIVE'},
+      {'id': 'card-308', 'text': 'PERFECT'},
+      {'id': 'card-309', 'text': 'PERSEVERANCE'},
+      {'id': 'card-310', 'text': 'PERSISTENCE'},
+      {'id': 'card-311', 'text': 'SLOW'},
+      {'id': 'card-312', 'text': 'SNEAKY'},
+      {'id': 'card-313', 'text': 'SNOBBISH'},
+      {'id': 'card-314', 'text': 'SOLIDARITY'},
+      {'id': 'card-315', 'text': 'SOLIDITY'},
+      {'id': 'card-316', 'text': 'SOLITUDE'},
+      {'id': 'card-317', 'text': 'SOPHISTICATED'},
+      {'id': 'card-318', 'text': 'SOUND'},
+      {'id': 'card-319', 'text': 'SPIRITED'},
+      {'id': 'card-320', 'text': 'SPIRITUALITY'},
+      {'id': 'card-321', 'text': 'SPONTANEITY'},
+      {'id': 'card-322', 'text': 'STABILITY'},
+      {'id': 'card-323', 'text': 'STEADFAST'},
+      {'id': 'card-324', 'text': 'STILL'},
+      {'id': 'card-325', 'text': 'STIMULATING'},
+      {'id': 'card-326', 'text': 'STINGY'},
+      {'id': 'card-327', 'text': 'STRANGE'},
+      {'id': 'card-328', 'text': 'STRENGTH'},
+      {'id': 'card-329', 'text': 'STRUCTURE'},
+      {'id': 'card-330', 'text': 'STURDY'},
+      {'id': 'card-331', 'text': 'SUBSTANTIALITY'},
+      {'id': 'card-332', 'text': 'SUCCESS'},
+      {'id': 'card-333', 'text': 'SUFFICIENCY'},
+      {'id': 'card-334', 'text': 'SULKY'},
+      {'id': 'card-335', 'text': 'SUPERB'},
+      {'id': 'card-336', 'text': 'SUPPORTIVE'},
+      {'id': 'card-337', 'text': 'SUPREMACY'},
+      {'id': 'card-338', 'text': 'SURPRISING'},
+      {'id': 'card-339', 'text': 'SYMPATHY'},
+      {'id': 'card-340', 'text': 'SYNERGY'},
+      {'id': 'card-341', 'text': 'TACKY'},
+      {'id': 'card-342', 'text': 'TACTFUL'},
+      {'id': 'card-343', 'text': 'TALENTED'},
+      {'id': 'card-344', 'text': 'TECH SAVVY'},
+      {'id': 'card-345', 'text': 'TEMPERANCE'},
+      {'id': 'card-346', 'text': 'TENSE'},
+      {'id': 'card-347', 'text': 'TERRIBLE'},
+      {'id': 'card-348', 'text': 'TESTY'},
+      {'id': 'card-349', 'text': 'THANKFUL'},
+      {'id': 'card-350', 'text': 'THICK-SKINNED'},
+      {'id': 'card-351', 'text': 'THOROUGHNESS'},
+      {'id': 'card-352', 'text': 'THOUGHTFUL'},
+      {'id': 'card-353', 'text': 'THOUGHTLEADER'},
+      {'id': 'card-354', 'text': 'THOUGHTLESS'},
+      {'id': 'card-355', 'text': 'THREATENING'},
+      {'id': 'card-356', 'text': 'THRIFTY'},
+      {'id': 'card-357', 'text': 'TIDINESS'},
+      {'id': 'card-358', 'text': 'TIGHT'},
+      {'id': 'card-359', 'text': 'TIMELINESS'},
+      {'id': 'card-360', 'text': 'TIMID'},
+      {'id': 'card-361', 'text': 'TIRED'},
+      {'id': 'card-362', 'text': 'TIRESOME'},
+      {'id': 'card-363', 'text': 'TOGETHER'},
+      {'id': 'card-364', 'text': 'TOUGH'},
+      {'id': 'card-365', 'text': 'TRANQUILITY'},
+      {'id': 'card-366', 'text': 'TRANSPARENCY'},
+      {'id': 'card-367', 'text': 'TROUBLED'},
+      {'id': 'card-368', 'text': 'TRUCULENT'},
+      {'id': 'card-369', 'text': 'TRUST'},
+      {'id': 'card-370', 'text': 'TRUTH'},
+      {'id': 'card-371', 'text': 'TYPICAL'},
+      {'id': 'card-372', 'text': 'UNBIASED'},
+      {'id': 'card-373', 'text': 'UNDERSTANDING'},
+      {'id': 'card-374', 'text': 'UNFETTERED'},
+      {'id': 'card-375', 'text': 'UNFLAPPABLE'},
+      {'id': 'card-376', 'text': 'UNIFIED'},
+      {'id': 'card-377', 'text': 'UNIQUE'},
+      {'id': 'card-378', 'text': 'UNITY'},
+      {'id': 'card-379', 'text': 'UNPRETENTIOUS'},
+      {'id': 'card-380', 'text': 'UNUSUAL'},
+      {'id': 'card-381', 'text': 'UPBEAT'},
+      {'id': 'card-382', 'text': 'UPTIGHT'},
+      {'id': 'card-383', 'text': 'USEFUL'},
+      {'id': 'card-384', 'text': 'UTILITY'},
+      {'id': 'card-385', 'text': 'VAGUE'},
+      {'id': 'card-386', 'text': 'VALIANT'},
+      {'id': 'card-387', 'text': 'VALOR'},
+      {'id': 'card-388', 'text': 'VARIETY'},
+      {'id': 'card-389', 'text': 'VENGEFUL'},
+      {'id': 'card-390', 'text': 'VENOMOUS'},
+      {'id': 'card-391', 'text': 'VICTORY'},
+      {'id': 'card-392', 'text': 'VIGOR'},
+      {'id': 'card-393', 'text': 'VIGOROUS'},
+      {'id': 'card-394', 'text': 'VIRTUE'},
+      {'id': 'card-395', 'text': 'VIRTUOUS'},
+      {'id': 'card-396', 'text': 'VISION'},
+      {'id': 'card-397', 'text': 'VISIONARY'},
+      {'id': 'card-398', 'text': 'VITALITY'},
+      {'id': 'card-399', 'text': 'VIVACIOUS'},
+      {'id': 'card-400', 'text': 'VIVACITY'},
+      {'id': 'card-401', 'text': 'VOLATILE'},
+      {'id': 'card-402', 'text': 'VORACIOUS'},
+      {'id': 'card-403', 'text': 'VULGAR'},
+      {'id': 'card-404', 'text': 'WARM'},
+      {'id': 'card-405', 'text': 'WARY'},
+      {'id': 'card-406', 'text': 'WASTEFUL'},
+      {'id': 'card-407', 'text': 'WATCHFUL'},
+      {'id': 'card-408', 'text': 'WEAK'},
+      {'id': 'card-409', 'text': 'WEALTH'},
+      {'id': 'card-410', 'text': 'WHOLESOME'},
+      {'id': 'card-411', 'text': 'WICKED'},
+      {'id': 'card-412', 'text': 'WILLFUL'},
+      {'id': 'card-413', 'text': 'WINNING'},
+      {'id': 'card-414', 'text': 'WISDOM'},
+      {'id': 'card-415', 'text': 'WITTY'},
+      {'id': 'card-416', 'text': 'WONDER'},
+      {'id': 'card-417', 'text': 'WONDERFUL'},
+      {'id': 'card-418', 'text': 'WORLDLY'},
+      {'id': 'card-419', 'text': 'WORTHY'},
+      {'id': 'card-420', 'text': 'WRETCHED'},
+      {'id': 'card-421', 'text': 'YOUTHFUL'},
+      {'id': 'card-422', 'text': 'ZEALOUS'},
+      {'id': 'card-423', 'text': 'ZEST'},
+      {'id': 'card-424', 'text': 'ZING'}
     ]
   },
   {
@@ -67,62 +459,62 @@ const initialState  = [
 ]
 
 const listsReducer = (state = initialState, action) => {
-    switch (action.type){
-        case CONSTANTS.ADD_LIST:
-            const newList = {
-                title: action.payload,
-                cards: [],
-                id: `list-${listID}`
-            }
-            listID += 1;
-            return [...state, newList]
-        case CONSTANTS.ADD_CARD:
-            const newCard = {
-                text: action.payload.text,
-                id: `card-${cardID}`
-            }
-            cardID += 1;
-            return state.map(list => {
-                if(list.id === action.payload.listID){
-                    return {
-                        ...list,
-                        cards: [...list.cards, newCard]
-                    }
-                }
-                return list
-            });
-        case CONSTANTS.DRAG_HAPPENED:
-            const newState = [...state];
-            const { droppableIdStart,
-                    droppableIdEnd,
-                    droppableIndexStart,
-                    droppableIndexEnd,
-                    // draggableId,
-                    type
-            } = action.payload;
-            //dragging list around
-            if(type === "list"){
-                const list = newState.splice(droppableIndexStart+1, 1); // added +1 because since we are passing all elements without the fixed list when we use the droppable indexes brought by the component, those indexes are moved -1 from the real list
-                newState.splice(droppableIndexEnd+1, 0, ...list);
-                return newState;
-            }
-            //in the same list
-            if(droppableIdStart === droppableIdEnd){
-                const list = newState.find(list => droppableIdStart === list.id);
-                const card = list.cards.splice(droppableIndexStart, 1);
-                list.cards.splice(droppableIndexEnd, 0, ...card);
-            }
-            //other list
-            if(droppableIdStart !== droppableIdEnd){
-                const listStart = newState.find(list => droppableIdStart === list.id);
-                const listEnd = newState.find(list => droppableIdEnd === list.id);
-                const card = listStart.cards.splice(droppableIndexStart, 1);
-                listEnd.cards.splice(droppableIndexEnd, 0, ...card);
-            }
-            return newState;
-        default:
-            return state;
-    }
+  switch (action.type){
+    case CONSTANTS.ADD_LIST:
+      const newList = {
+        title: action.payload,
+        cards: [],
+        id: `list-${listID}`
+      }
+      listID += 1;
+      return [...state, newList]
+    case CONSTANTS.ADD_CARD:
+      const newCard = {
+        text: action.payload.text,
+        id: `card-${cardID}`
+      }
+      cardID += 1;
+      return state.map(list => {
+        if(list.id === action.payload.listID){
+          return {
+            ...list,
+            cards: [...list.cards, newCard]
+          }
+        }
+        return list
+      });
+    case CONSTANTS.DRAG_HAPPENED:
+      const newState = [...state];
+      const { droppableIdStart,
+        droppableIdEnd,
+        droppableIndexStart,
+        droppableIndexEnd,
+        // draggableId,
+        type
+      } = action.payload;
+      //dragging list around
+      if(type === "list"){
+        const list = newState.splice(droppableIndexStart+1, 1); // added +1 because since we are passing all elements without the fixed list when we use the droppable indexes brought by the component, those indexes are moved -1 from the real list
+        newState.splice(droppableIndexEnd+1, 0, ...list);
+        return newState;
+      }
+      //in the same list
+      if(droppableIdStart === droppableIdEnd){
+        const list = newState.find(list => droppableIdStart === list.id);
+        const card = list.cards.splice(droppableIndexStart, 1);
+        list.cards.splice(droppableIndexEnd, 0, ...card);
+      }
+      //other list
+      if(droppableIdStart !== droppableIdEnd){
+        const listStart = newState.find(list => droppableIdStart === list.id);
+        const listEnd = newState.find(list => droppableIdEnd === list.id);
+        const card = listStart.cards.splice(droppableIndexStart, 1);
+        listEnd.cards.splice(droppableIndexEnd, 0, ...card);
+      }
+      return newState;
+    default:
+      return state;
+  }
 };
 
 export default listsReducer;
