@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import TrelloList from "./TrelloList";
+import CardCollection from "./CardCollection";
 import { connect } from "react-redux";
 import TrelloActionButton from './TrelloActionButton';
 import { DragDropContext,  Droppable } from 'react-beautiful-dnd';
@@ -9,7 +10,15 @@ import styled from "styled-components";
 const ListsContainer = styled.div`
   display: flex;
   flex-direction: row;
-`
+`;
+const ColContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const Col = styled.div`
+  height: 100%;
+`;
 
 class App extends React.Component{
 
@@ -25,7 +34,7 @@ class App extends React.Component{
       source.index,
       destination.index,
       draggableId,
-      type
+      type //draggablle type?
     ));
     
   }
@@ -34,27 +43,32 @@ class App extends React.Component{
     const { lists } = this.props;
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <div>
-            <h2> Hello Youtube </h2>
-            <Droppable droppableId="all-lists" direction="horizontal" type="list">
-              {(provided)=>(
-                <ListsContainer 
-                  {...provided.droppableProps} 
-                  ref={provided.innerRef}
-                >
-                  { lists.map((list, index) => <TrelloList
-                                        listID={list.id}
-                                        key={list.id} 
-                                        title={list.title} 
-                                        cards={list.cards}
-                                        index={index}
-                                      ></TrelloList>)}
-                  {provided.placeholder}
-                  <TrelloActionButton list/>
-                </ListsContainer>
-              )}
-            </Droppable>
-        </div>
+        <ColContainer>
+              <Col>
+                <CardCollection/>
+              </Col>
+              <Col>
+                <h2> Hello Youtube </h2>
+                <Droppable droppableId="all-lists" direction="horizontal" type="list">
+                  {(provided)=>(
+                    <ListsContainer 
+                      {...provided.droppableProps} 
+                      ref={provided.innerRef}
+                    >
+                      { lists.map((list, index) => <TrelloList
+                                            listID={list.id}
+                                            key={list.id} 
+                                            title={list.title} 
+                                            cards={list.cards}
+                                            index={index}
+                                          ></TrelloList>)}
+                      {provided.placeholder}
+                      <TrelloActionButton list/>
+                    </ListsContainer>
+                  )}
+                </Droppable>
+              </Col>
+            </ColContainer>
       </DragDropContext>
     );
   }
