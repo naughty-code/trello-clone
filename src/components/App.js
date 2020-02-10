@@ -45,7 +45,7 @@ class App extends React.Component{
       <DragDropContext onDragEnd={this.onDragEnd}>
         <ColContainer>
               <Col>
-                <CardCollection/>
+                <CardCollection list={lists.find(l => l.fixed)} />
               </Col>
               <Col>
                 <h2> Hello Youtube </h2>
@@ -55,7 +55,7 @@ class App extends React.Component{
                       {...provided.droppableProps} 
                       ref={provided.innerRef}
                     >
-                      { lists.map((list, index) => <TrelloList
+                      { lists.filter(l => !l.fixed).map((list, index) => <TrelloList
                                             listID={list.id}
                                             key={list.id} 
                                             title={list.title} 

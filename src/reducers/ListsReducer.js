@@ -7,6 +7,7 @@ const initialState  = [
     {
         title: "Last Episode",
         id: `list-${0}`,
+        fixed:true,
         cards: [
             {
                 id: `card-${0}`,
@@ -74,8 +75,8 @@ const listsReducer = (state = initialState, action) => {
             } = action.payload;
             //dragging list around
             if(type === "list"){
-                const list = newState.splice(droppableIndexStart, 1);
-                newState.splice(droppableIndexEnd, 0, ...list);
+                const list = newState.splice(droppableIndexStart+1, 1); // added +1 because since we are passing all elements without the fixed list when we use the droppable indexes brought by the component, those indexes are moved -1 from the real list
+                newState.splice(droppableIndexEnd+1, 0, ...list);
                 return newState;
             }
             //in the same list

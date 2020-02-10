@@ -7,17 +7,16 @@ import { connect } from "react-redux";
 const CardCollectionContainer = styled.div`
 `;
 
-const CardCollection = ({fixedList}) => !fixedList.cards ? 'No Cards in Main List' : (
-    <Droppable type="fixed" droppableId={fixedList.id}>
+const CardCollection = ({list}) => !list.cards ? 'No Cards in Main List' : (
+    <Droppable droppableId={list.id}>
         {(provided) => (
             <CardCollectionContainer {...provided.droppableProps} ref={provided.innerRef}>
-                    {fixedList.cards.map((card, index) => <TrelloCard key={card.id} {...card} index={index}/>)}
+                    {list.cards.map((card, index) => <TrelloCard key={card.id} {...card} index={index}/>)}
                     {provided.placeholder}
             </CardCollectionContainer>
         )}
     </Droppable>
 );
 
-const mapStateToProps = (state) => ({fixedList: state.fixedList});
 
-export default connect(mapStateToProps)(CardCollection);
+export default CardCollection;
