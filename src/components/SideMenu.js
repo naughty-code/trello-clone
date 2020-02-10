@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 const SideMenuContainer = styled.div`
   width: 250px;
-  height: calc(100vh);
+  height: 100vh;
   overflow: auto;
 `;
 

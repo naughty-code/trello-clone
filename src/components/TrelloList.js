@@ -1,7 +1,6 @@
 import React from "react";
 import TrelloCard from "./TrelloCard";
 import { Typography } from '@material-ui/core';
-import TrelloActionButton from "./TrelloActionButton";
 import { Droppable, Draggable } from 'react-beautiful-dnd';
 import styled from 'styled-components';
 
@@ -35,7 +34,6 @@ const TrelloList = ({ title, cards, listID, index }) => {
                                                 index={index}
                                         />))}
                                     {provided.placeholder}
-                                    <TrelloActionButton listID={ listID }/>
                                 </div>
                                 )}
                     </Droppable>
