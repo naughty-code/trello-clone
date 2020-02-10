@@ -14,7 +14,7 @@ import { connect } from 'react-redux';
 
 const SideMenuContainer = styled.div`
   width: 250px;
-  height: 100vh;
+  height: calc(100vh);
   overflow: auto;
 `;
 
