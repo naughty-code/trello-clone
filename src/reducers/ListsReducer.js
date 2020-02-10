@@ -4,39 +4,66 @@ let listID = 2;
 let cardID = 5;
 
 const initialState  = [
-    {
-        title: "Last Episode",
-        id: `list-${0}`,
-        fixed:true,
-        cards: [
-            {
-                id: `card-${0}`,
-                text: "we created a static list and a static card"
-            },
-            {
-                id: `card-${1}`,
-                text: "we use a mix between material ui and react  components"
-            }
-        ]
-    },
-    {
-        title: "This Episode",
-        id: `list-${1}`,
-        cards: [
-            {
-                id: `card-${2}`,
-                text: "we will create our first reducer"
-            },
-            {
-                id: `card-${3}`,
-                text: "and render many cards on our list with static data"
-            },
-            {
-                id: `card-${4}`,
-                text: "we will also make some little changes  i forgot  in the last episode"
-            }
-        ]
-    },
+  {
+    title: "Side Menu",
+    id: `list-${0}`,
+    fixed:true,
+    cards: [
+      {'id': 'card-0', 'text': 'ACCOMPLISHED'},
+      {'id': 'card-1', 'text': 'COMMITTED'},
+      {'id': 'card-2', 'text': 'TRUSTWORTHY'},
+      {'id': 'card-3', 'text': 'TEAMWORK'},
+      {'id': 'card-4', 'text': 'TRANSCENDENT'},
+      {'id': 'card-5', 'text': 'MEMORABLE'},
+      {'id': 'card-6', 'text': 'LEADER'},
+      {'id': 'card-7', 'text': 'ARROGANT'},
+      {'id': 'card-8', 'text': 'COMBATIVE'},
+      {'id': 'card-9', 'text': 'CONFUSED'},
+      {'id': 'card-10', 'text': 'TRADITIONALISM'},
+      {'id': 'card-11', 'text': 'WORTHLESS'},
+      {'id': 'card-12', 'text': 'COMPLEX'},
+      {'id': 'card-13', 'text': 'Unfinished.'},
+      {'id': 'card-14', 'text': 'CUSTOM'},
+      {'id': 'card-15', 'text': 'PAINSTAKING'},
+      {'id': 'card-16', 'text': 'AFFLUENCE'},
+      {'id': 'card-17', 'text': 'AGREEABLE'},
+      {'id': 'card-18', 'text': 'ABUSIVE'},
+      {'id': 'card-19', 'text': 'ACADEMIC'},
+      {'id': 'card-20', 'text': 'ADVENTURE'},
+      {'id': 'card-21', 'text': 'ACHIEVEMENT'},
+      {'id': 'card-22', 'text': 'ABRASIVE'},
+      {'id': 'card-23', 'text': 'ADEQUATE'},
+      {'id': 'card-24', 'text': 'ALERT'},
+      {'id': 'card-25', 'text': 'INFORMATIVE'},
+      {'id': 'card-26', 'text': 'ADAPTABLE'},
+      {'id': 'card-27', 'text': 'JEALOUS'},
+      {'id': 'card-28', 'text': 'ABRUPT'},
+      {'id': 'card-29', 'text': 'SPEED'},
+      {'id': 'card-30', 'text': 'ALIVE'},
+      {'id': 'card-31', 'text': 'ABLE'},
+      {'id': 'card-32', 'text': 'ALOOF'},
+    ]
+  },
+  {
+    title: "“Who we are”",
+    id: `list-${2}`,
+    cards: [ ]
+  },
+  {
+    title: "How we want our users to feel",
+    id: `list-${3}`,
+    cards: [ ]
+  },
+  {
+    title: "“Who we’d like to be”",
+    id: `list-${4}`,
+    cards: [ ]
+  },
+  {
+    title: "“Who we aren’t”",
+    id: `list-${5}`,
+    cards: [ ]
+  },
 ]
 
 const listsReducer = (state = initialState, action) => {
