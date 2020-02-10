@@ -86,7 +86,7 @@ class App extends React.Component{
         <ColContainer>
 
           <Col>
-            <SideMenu/>
+            <SideMenu list={ lists.find(l => l.fixed) }/>
           </Col>
 
           <GroupsContainer>
