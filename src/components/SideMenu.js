@@ -5,6 +5,7 @@ import TrelloCard from "./TrelloCard";
 // import CardCollection from "./CardCollection";
 
 import styled from "styled-components";
+import { connect } from 'react-redux';
 
 const SideMenuContainer = styled.div`
   width: 250px;
@@ -12,19 +13,15 @@ const SideMenuContainer = styled.div`
   overflow: auto;
 `;
 
-export default function({ records }) {
-
-  if ( !records || !records.cards )
-    return 'No Cards in this list'
-
+function SideMenuC({ list }) {
   return (
-    <Droppable droppableId={records.id}>
+    <Droppable droppableId={list.id}>
 
       { (provided) => (
 
         <SideMenuContainer { ...provided.droppableProps } ref={ provided.innerRef }>
 
-          { records.cards.map((card, index) => (
+          { list.cards.map((card, index) => (
             <TrelloCard key={ card.id } { ...card } index={ index } />
           )) }
 
@@ -36,3 +33,9 @@ export default function({ records }) {
     </Droppable>
   );
 }
+
+const mapStateToProps = (state) => ({list: state.lists[0]})
+
+const SideMenu = connect(mapStateToProps)(SideMenuC);
+
+export default SideMenu;

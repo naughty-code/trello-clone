@@ -6,20 +6,30 @@ import  styled  from "styled-components";
 const CardCollectionContainer = styled.div`
 `;
 
+class CardList extends React.Component{
+  shouldComponentUpdate(nextProps){
+    if(nextProps.cards === this.props.cards){
+      return false;
+    }
+    return true;
+  }
+  render(){
+    const { cards } = this.props;
+    return list.cards.map((card, index) => (
+      <TrelloCard key={card.id} {...card} index={index} />
+    ));
+  }
+}
+
 const CardCollection = ({list}) => {
 
-  return (!list.cards) 
-    ? 'No Cards in Main List' 
-    : (
+  return (
       <Droppable droppableId={list.id}>
       { (provided) => (
 
         <CardCollectionContainer {...provided.droppableProps} ref={provided.innerRef}>
 
-          { list.cards.map((card, index) => (
-            <TrelloCard key={card.id} {...card} index={index} />
-          )) }
-
+          <CardList cards={list.cards}/>
           { provided.placeholder }
 
         </CardCollectionContainer>

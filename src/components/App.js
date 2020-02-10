@@ -33,10 +33,36 @@ const Col = styled.div`
   height: 100%;
 `;
 
+class InnerListsC extends React.Component{
+  shouldComponentUpdate(newProps){
+      if(newProps.lists === this.props.lists){
+        return false;
+      }
+      return true;
+  }
+  render(){
+    const { lists } = this.props;
+      return lists.filter(l => !l.fixed).map((list, index) => 
+      <TrelloList
+        listID={list.id}
+        key={list.id} 
+        title={list.title} 
+        cards={list.cards}
+        index={index}
+        >
+      </TrelloList>
+    );
+  }
+};
+
+const mapStateToPropsC = (state) => ({lists: state.lists})
+
+const InnerLists = connect(mapStateToPropsC)(InnerListsC);
+
 class App extends React.Component{
 
   onDragEnd = (result) => {
-    // TODO: reordering logic (DO IT NOW!)
+    // TODO: reordering logic (DO IT NOW!) thats already done, forgot to remove the comment
     const { destination, source, draggableId, type } = result;
     if( !destination ){
       return;
@@ -60,7 +86,7 @@ class App extends React.Component{
         <ColContainer>
 
           <Col>
-            <SideMenu records={ lists.find(l => l.fixed) }/>
+            <SideMenu/>
           </Col>
 
           <GroupsContainer>
@@ -68,20 +94,8 @@ class App extends React.Component{
               { (provided) => (
 
                 <ListsContainer {...provided.droppableProps} ref={provided.innerRef} >
-
-                  { lists.filter(l => !l.fixed).map((list, index) => 
-                    <TrelloList
-                      listID={list.id}
-                      key={list.id} 
-                      title={list.title} 
-                      cards={list.cards}
-                      index={index}
-                      >
-                    </TrelloList>
-                  )}
-
+                  <InnerLists/>
                   {provided.placeholder}
-
                 </ListsContainer>
               )}
 
