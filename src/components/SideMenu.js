@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { forwardRef } from 'react';
 import {useState} from 'react';
 import { Droppable, Draggable } from "react-beautiful-dnd";
@@ -6,15 +5,6 @@ import useAutocomplete from '@material-ui/lab/useAutocomplete';
 import { makeStyles } from '@material-ui/core/styles';
 import { FixedSizeList as List } from 'react-window';
 import AutoSizer from 'react-virtualized-auto-sizer';
-=======
-import React from 'react';
-import { Droppable } from "react-beautiful-dnd";
-import useAutocomplete from '@material-ui/lab/useAutocomplete';
-import { makeStyles } from '@material-ui/core/styles';
-import { FixedSizeList as List } from 'react-window';
-
-import InputBase from '@material-ui/core/InputBase';
->>>>>>> 08d539b6a47aaa56ea9f3c19b85c6a132e869f77
 
 import InputBase from '@material-ui/core/InputBase';
 
