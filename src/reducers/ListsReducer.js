@@ -492,10 +492,11 @@ const listsReducer = (state = initialState, action) => {
         // draggableId,
         type
       } = action.payload;
+      const draggableType = type;
       //dragging list around
-      if(type === "list"){
-        const list = newState.splice(droppableIndexStart+1, 1); // added +1 because since we are passing all elements without the fixed list when we use the droppable indexes brought by the component, those indexes are moved -1 from the real list
-        newState.splice(droppableIndexEnd+1, 0, ...list);
+      if(draggableType === "list"){
+        const list = newState.splice(droppableIndexStart, 1); // added +1 because since we are passing all elements without the fixed list when we use the droppable indexes brought by the component, those indexes are moved -1 from the real list
+        newState.splice(droppableIndexEnd, 0, ...list);
         return newState;
       }
       //in the same list
@@ -503,6 +504,7 @@ const listsReducer = (state = initialState, action) => {
         const list = newState.find(list => droppableIdStart === list.id);
         const card = list.cards.splice(droppableIndexStart, 1);
         list.cards.splice(droppableIndexEnd, 0, ...card);
+        return newState;
       }
       //other list
       if(droppableIdStart !== droppableIdEnd){
@@ -510,6 +512,7 @@ const listsReducer = (state = initialState, action) => {
         const listEnd = newState.find(list => droppableIdEnd === list.id);
         const card = listStart.cards.splice(droppableIndexStart, 1);
         listEnd.cards.splice(droppableIndexEnd, 0, ...card);
+        return newState;
       }
       return newState;
     default:

@@ -55,11 +55,14 @@ const InnerLists = connect(mapStateToPropsC)(InnerListsC);
 class App extends React.Component{
 
   onDragEnd = (result) => {
-    //TODO: reordering logic
     const { destination, source, draggableId, type } = result;
     if( !destination ){
       return;
     }
+    console.log(`src index: ${source.index} -- dest index: ${destination.index}`);
+    console.log(`droppable id : ${source.droppableId}  -- dropableId: ${destination.droppableId}`);
+    console.log(`${draggableId}`);
+    console.log(`${type}`);
     this.props.dispatch(sort(
       source.droppableId,
       destination.droppableId,
@@ -77,22 +80,26 @@ class App extends React.Component{
       <DragDropContext onDragEnd={this.onDragEnd}>
         <ColContainer>
               <Col>
-                <SideMenu records={ lists.find(l => l.fixed) }/>
+                <SideMenu/>
               </Col>
               <Col>
                 <Droppable droppableId="all-lists" direction="horizontal" type="list">
-                  {(provided)=>(
+                  {(provided, snapshot)=>(
                     <ListsContainer 
                       {...provided.droppableProps} 
                       ref={provided.innerRef}
                     >
-                      { lists.filter(l => !l.fixed).map((list, index) => <TrelloList
+                      { lists.map((list, index) => ({...list, index}))
+                        .filter(l => l.index > 0)
+                        .map((list => <TrelloList
                                             listID={list.id}
                                             key={list.id} 
                                             title={list.title} 
                                             cards={list.cards}
-                                            index={index}
-                                          ></TrelloList>)}
+                                            index={list.index}
+                                          ></TrelloList>
+                        ))
+                      }
                       {provided.placeholder}
                       <TrelloActionButton list/>
                     </ListsContainer>

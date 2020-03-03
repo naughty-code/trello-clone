@@ -1,12 +1,14 @@
-import React from 'react';
-import { Droppable } from "react-beautiful-dnd";
+import React, { forwardRef } from 'react';
+import {useState} from 'react';
+import { Droppable, Draggable } from "react-beautiful-dnd";
 import useAutocomplete from '@material-ui/lab/useAutocomplete';
 import { makeStyles } from '@material-ui/core/styles';
 import { FixedSizeList as List } from 'react-window';
+import AutoSizer from 'react-virtualized-auto-sizer';
 
 import InputBase from '@material-ui/core/InputBase';
 
-import TrelloCard from "./TrelloCard";
+import DraggableCard, { TrelloCard } from "./TrelloCard";
 // import CardCollection from "./CardCollection";
 
 import styled from "styled-components";
@@ -33,110 +35,93 @@ const useStyles = makeStyles({
 // className={ classes.propertyDetailSideBox }
 // classes={{ listBox: classes.listBox }}
 
-export default function({ list, ...other }) {
+const InnerSideMenu = ({ lists }) => {
 
-  if ( !list || !list.cards )
-    return 'No Cards in this list';
+  //if ( !list || !list.cards )
+  //  return 'No Cards in this list';
+  const [ kw, setKW ] = useState('');
 
   const classes = useStyles();
 
-  const getOptionLabel = (option) => {
-    return option.text || '';
-  };
-
-  const {
-    getRootProps,
-    // getInputLabelProps,
-    getInputProps,
-    // getListboxProps,
-    getOptionProps,
-    groupedOptions,
-
-  } = useAutocomplete({ 
-    open: true,
-    // disableCloseOnSelect: true,
-    options: list.cards,
-    getOptionLabel, 
-    // getOptionSelected, 
-    componentName: 'Autocomplete',
-    ...other
-  });
+  /*const DraggableCard = (cardProps) => {
+    const { index, id, style } = cardProps;
+    return (
+        <Draggable index={index} draggableId={id} key={id}>
+            {(provided) => (
+                <TrelloCard {...cardProps} provided={provided} style={{ margin: 0, ...style }}/>
+            )}
+        </Draggable>
+    ); 
+   };*/
 
   const Row = ({ data, index, style }) => {
 
+    //const item = data.find(card => card.index === index);
+    //console.log(data);
     const item = data[index];
-
+    console.log(item);
     return (
-      <TrelloCard 
-        { ...getOptionProps({ item, index }) } 
-        key={ item.id } 
-        { ...item } 
-        index={ index } 
-        cardStyle={ style }
+      <DraggableCard 
+        index={index}
+        key={item.id} 
+        {...item}
+        style={style}
       />
     )
   };
 
-  const renderOptions = (provided, snapshot, groupedOptions) => {
 
-    //{ ...provided.droppableProps }
-
-    const itemCount = snapshot.isUsingPlaceholder 
-      ? groupedOptions.length + 1 
-      : groupedOptions.length;
-
-    if ( !groupedOptions || groupedOptions.length <= 0 )
-      return null;
-
+  const renderClone = (draggableProvided, snapshot, rubric) => {
+    console.log(`rubric: ${rubric.source.index}`);
+    const card = lists[0].cards[rubric.source.index];
     return (
-      <List
-        height={800}
-        itemCount={ itemCount }
-        itemSize={70}
-        width={300}
-        outerRef={ provided.innerRef }
-        itemData={ groupedOptions }
-      >
-        { Row }
-      </List>
+      <TrelloCard
+        draggableProvided={draggableProvided}
+        isDragging={snapshot.isDragging}
+        index={rubric.source.index}
+        {...card}
+      />
     );
-  }
-
-  const renderClone = (provided, snapshot, rubric) => {
-    return (
-      <div
-        {...provided.draggableProps}
-        {...provided.dragHandleProps}
-        ref={provided.innerRef}
-      >
-        Item id: {rubric.draggableId}
-      </div>
-    );
-  }
-
+  };
+  const filteredCards = lists[0].cards.map((c, index) => ({...c, index})).filter(c => c.text.toLowerCase().includes(kw.toLowerCase()));
+  console.log(filteredCards);
   return (
     <SideMenuContainer>
-
-      <div { ...getRootProps() }>
-        <InputBase { ...getInputProps() } className={ classes.input } fullWidth />
-      </div>
-
+      <React.Fragment>
+      <InputBase 
+        className={ classes.input } 
+        fullWidth 
+        onChange={
+          (e) => {setKW(e.target.value);}
+        }
+      />
       <Droppable 
-        droppableId={ list.id } 
+        droppableId={ String(lists[0].id) } 
         mode="virtual"
         renderClone={ renderClone }
       >
-
-        { (provided, snapshot) => renderOptions(provided, snapshot, groupedOptions) }
-
+        { (droppableProvided, snapshot) => (
+            <List
+            itemCount={filteredCards.length}
+            itemSize={50}
+            height={850}
+            width={300}
+            outerRef={ droppableProvided.innerRef }
+            itemData={filteredCards}
+            isDraggingOver={snapshot.isDraggingOver}
+            itemKey={(index, data) => (data[index].id)}
+            >
+            { Row }
+            </List>
+        )}
       </Droppable>
-
+      </React.Fragment>
     </SideMenuContainer>
   );
 }
 
-const mapStateToProps = (state) => ({list: state.lists[0]})
+const mapStateToProps = (state) => ({lists: state.lists})
 
-const SideMenu = connect(mapStateToProps)(SideMenuC);
+const SideMenu = connect(mapStateToProps)(InnerSideMenu);
 
 export default SideMenu;
